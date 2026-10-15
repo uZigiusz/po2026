@@ -24,7 +24,6 @@ public class Lotto {
 
         }
 
-
         Random random = new Random();
 
         for (int i = 0; i < n; i++) {
