@@ -12,30 +12,24 @@ public class Lotto {
         Scanner scanner = new Scanner(System.in);
 
         int n = 6;
-        int[] userTypes = new int[n];
+        int[] typy = new int[n];
 
         System.out.println("Podaj 6 różnych liczb z zakresu 1-49:");
 
         for (int i = 0; i < n; i++) {
             System.out.print("Podaj liczbę " + (i + 1) + ": ");
 
-            if (!scanner.hasNextInt()) {
-                System.out.println("Błąd! Musisz podać liczbę całkowitą.");
-                scanner.close();
-                return;
-            }
+            typy[i] = scanner.nextInt();
 
-            userTypes[i] = scanner.nextInt();
-
-            if (userTypes[i] < 1 || userTypes[i] > 49) {
-                System.out.println("Błąd! Liczba musi być z zakresu 1-49.");
+            if (typy[i] < 1 || typy[i] > 49) {
+                System.out.println("tylko z zakresu 1-49.");
                 scanner.close();
                 return;
             }
 
             for (int j = 0; j < i; j++) {
-                if (userTypes[i] == userTypes[j]) {
-                    System.out.println("Błąd! Nie można podawać powtarzających się liczb.");
+                if (typy[i] == typy[j]) {
+                    System.out.println("nie mozna powtarzac");
                     scanner.close();
                     return;
                 }
@@ -44,7 +38,7 @@ public class Lotto {
 
         scanner.close();
 
-        int[] drawnNumbers = new int[n];
+        int[] liczbylos = new int[n];
         Random random = new Random();
 
         for (int i = 0; i < n; i++) {
@@ -52,22 +46,22 @@ public class Lotto {
 
             do {
                 liczba = random.nextInt(49) + 1;
-            } while (czyZawiera(drawnNumbers, liczba, i));
+            } while (czyZawiera(liczbylos, liczba, i));
 
-            drawnNumbers[i] = liczba;
+            liczbylos[i] = liczba;
         }
 
         int hits = 0;
 
-        for (int userNum : userTypes) {
-            if (czyZawiera(drawnNumbers, userNum, n)) {
+        for (int userNum : typy) {
+            if (czyZawiera(liczbylos, userNum, n)) {
                 hits++;
             }
         }
 
         System.out.println();
-        System.out.println("Twoje typy: " + Arrays.toString(userTypes));
-        System.out.println("Wylosowane liczby: " + Arrays.toString(drawnNumbers));
+        System.out.println("Twoje typy: " + Arrays.toString(typy));
+        System.out.println("Wylosowane liczby: " + Arrays.toString(liczbylos));
         System.out.println("Liczba trafień: " + hits);
     }
 
