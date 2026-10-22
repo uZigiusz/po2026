@@ -1,77 +1,71 @@
 
 package agh.po.lab2;
 
+
+import java.util.ArrayList;
 import java.util.Random;
-import java.util.Arrays;
-import java.util.Scanner;
 
 public class Lotto {
 
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
 
         int n = 6;
-        int[] typy = new int[n];
 
-        System.out.println("Podaj 6 różnych liczb z zakresu 1-49:");
-
-        for (int i = 0; i < n; i++) {
-            System.out.print("Podaj liczbę " + (i + 1) + ": ");
-
-            typy[i] = scanner.nextInt();
-
-            if (typy[i] < 1 || typy[i] > 49) {
-                System.out.println("tylko z zakresu 1-49.");
-                scanner.close();
-                return;
-            }
-
-            for (int j = 0; j < i; j++) {
-                if (typy[i] == typy[j]) {
-                    System.out.println("nie mozna powtarzac");
-                    scanner.close();
-                    return;
-                }
-            }
+        if (args.length != n) {
+            System.out.println("Podaj dokladnie 6 liczb");
+            return;
         }
 
-        scanner.close();
-
-        int[] liczbylos = new int[n];
-        Random random = new Random();
+        ArrayList<Integer> typy = new ArrayList<>();
 
         for (int i = 0; i < n; i++) {
             int liczba;
+            liczba = Integer.parseInt(args[i]);
 
-            do {
-                liczba = random.nextInt(49) + 1;
-            } while (czyZawiera(liczbylos, liczba, i));
 
-            liczbylos[i] = liczba;
+            if (liczba < 1 || liczba > 49) {
+                System.out.println("Liczby tylko z zakresu 1-49");
+                return;
+            }
+
+            if (typy.contains(liczba)) {
+                System.out.println("liczby sie nie moga powtarzac");
+                return;
+            }
+
+            typy.add(liczba);
+
         }
 
+        ArrayList<Integer> liczbylos = new ArrayList<>();
+        Random random = new Random();
+
+        while (liczbylos.size() < n) {
+            int liczba = random.nextInt(49) + 1;
+
+            if (!liczbylos.contains(liczba)) {
+                liczbylos.add(liczba);
+            }
+        }
+
+        // Liczenie trafień
         int hits = 0;
 
-        for (int userNum : typy) {
-            if (czyZawiera(liczbylos, userNum, n)) {
+        for (int liczba : typy) {
+            if (liczbylos.contains(liczba)) {
                 hits++;
             }
         }
 
-        System.out.println();
-        System.out.println("Twoje typy: " + Arrays.toString(typy));
-        System.out.println("Wylosowane liczby: " + Arrays.toString(liczbylos));
+        // Wyświetlenie wyników
+        System.out.println("Twoje typy: " + typy);
+        System.out.println("Wylosowane liczby: " + liczbylos);
         System.out.println("Liczba trafień: " + hits);
+
     }
 
-    public static boolean czyZawiera(int[] arr, int liczba, int koniec) {
-        for (int i = 0; i < koniec; i++) {
-            if (arr[i] == liczba) {
-                return true;
-            }
-        }
-
-        return false;
     }
-}
+
+
+
