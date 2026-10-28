@@ -49,7 +49,7 @@ public class Lotto {
             }
         }
 
-        // Liczenie trafień
+
         int hits = 0;
 
         for (int liczba : typy) {
@@ -58,7 +58,7 @@ public class Lotto {
             }
         }
 
-        // Wyświetlenie wyników
+
         System.out.println("Twoje typy: " + typy);
         System.out.println("Wylosowane liczby: " + liczbylos);
         System.out.println("Liczba trafień: " + hits);
