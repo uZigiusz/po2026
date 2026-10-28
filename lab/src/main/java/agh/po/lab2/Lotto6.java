@@ -41,6 +41,17 @@ public class Lotto6 {
         ArrayList<Integer> liczbylos = new ArrayList<>();
         Random random = new Random();
 
+        int hits = 0;
+        long proby = 0;
+
+        long start = System.currentTimeMillis();
+
+        while (hits < n) {
+            proby++;
+            liczbylos.clear();
+            hits = 0;
+
+
         while (liczbylos.size() < n) {
             int liczba = random.nextInt(49) + 1;
 
@@ -49,19 +60,24 @@ public class Lotto6 {
             }
         }
 
-
-        int hits = 0;
-
-        for (int liczba : typy) {
-            if (liczbylos.contains(liczba)) {
-                hits++;
+            for (int liczba : typy) {
+                if (liczbylos.contains(liczba)) {
+                    hits++;
+                }
             }
-        }
+
+
+
+    }
+
+        long stop = System.currentTimeMillis();
+        long czasTrwania = stop - start;
 
 
         System.out.println("Twoje typy: " + typy);
-        System.out.println("Wylosowane liczby: " + liczbylos);
-        System.out.println("Liczba trafień: " + hits);
+        System.out.println("trafiono 6/6");
+        System.out.println("Liczba losowan potrzebnych do pelnego trafienia: " + proby);
+        System.out.println("Laczny czas dzialania programu " + czasTrwania + "ms (" + (czasTrwania / 1000.0 + "s)"));
 
     }
 
