@@ -6,6 +6,8 @@ public class CodingBatTest {
 
     @org.junit.Test
     public void doubleX() {
-        assertEquals(true, )
+
+        CodingBat aa = new CodingBat();
+        assertEquals(true, aa.doubleX("axxbb"));
     }
 }
