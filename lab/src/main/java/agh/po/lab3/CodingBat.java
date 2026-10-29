@@ -42,6 +42,14 @@ public class CodingBat {
         return result;
     }
 
+    public boolean array123(int[] nums) {
+        // Note: iterate < length-2, so can use i+1 and i+2 in the loop
+        for (int i=0; i < (nums.length-2); i++) {
+            if (nums[i]==1 && nums[i+1]==2 && nums[i+2]==3) return true;
+        }
+        return false;
+    }
+
 
     public static void main(String[] args) {
 
@@ -51,6 +59,7 @@ public class CodingBat {
         System.out.println(newobj1.doubleX("xaxx"));
         System.out.println(newobj1.last2("hixxhi"));
         System.out.println(newobj1.stringTimes("hi", 2));
+        System.out.println(newobj1.array123(new int[]{1, 2, 1, 2, 3}));
 
 
 
