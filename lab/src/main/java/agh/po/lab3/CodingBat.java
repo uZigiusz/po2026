@@ -4,7 +4,7 @@ public class CodingBat {
 
 
     boolean doubleX(String str) {
-        ;
+
         int i = str.indexOf("x");
         if (i == -1) return false; // no "x" at all
 
