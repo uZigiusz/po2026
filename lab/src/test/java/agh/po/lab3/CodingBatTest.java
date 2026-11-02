@@ -37,4 +37,5 @@ public class CodingBatTest {
         assertFalse(cb.array123(new int[]{1, 2, 1, 4, 3}));
         assertTrue(cb.array123(new int[]{1, 2, 3}));
     }
+
 }

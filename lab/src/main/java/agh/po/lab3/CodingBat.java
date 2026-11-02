@@ -69,8 +69,6 @@ public class CodingBat {
         System.out.println(newobj1.array123(new int[]{1, 2, 3}));
 
 
-
-
     }
 }
 
