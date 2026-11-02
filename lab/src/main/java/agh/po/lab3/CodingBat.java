@@ -57,9 +57,16 @@ public class CodingBat {
         System.out.println(newobj1);
         System.out.println(newobj1.doubleX("axxbb"));
         System.out.println(newobj1.doubleX("xaxx"));
+        System.out.println(newobj1.doubleX("aaaax"));
         System.out.println(newobj1.last2("hixxhi"));
+        System.out.println(newobj1.last2("axxxaaxx"));
+        System.out.println(newobj1.last2("xxaxxaxxaxx"));
         System.out.println(newobj1.stringTimes("hi", 2));
+        System.out.println(newobj1.stringTimes("hi", 3));
+        System.out.println(newobj1.stringTimes("x", 4));
         System.out.println(newobj1.array123(new int[]{1, 2, 1, 2, 3}));
+        System.out.println(newobj1.array123(new int[]{1, 2, 1, 4, 3}));
+        System.out.println(newobj1.array123(new int[]{1, 2, 3}));
 
 
 
