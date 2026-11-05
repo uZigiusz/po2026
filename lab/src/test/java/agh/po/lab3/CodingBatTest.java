@@ -55,6 +55,17 @@ public class CodingBatTest {
 
     }
 
+    @Test
+    public void wordCount(){
+        CodingBat cb = new CodingBat();
 
+        String[] test = new String[]{"a", "b", "a", "c", "b"};
+        Map<String, Integer> expected1 = new HashMap<>();
+        expected1.put("a", 2);
+        expected1.put("b", 2);
+        expected1.put("c", 1);
+        assertEquals(expected1, cb.wordCount(test));
+
+    }
 
 }
