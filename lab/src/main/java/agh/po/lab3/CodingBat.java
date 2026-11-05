@@ -1,5 +1,8 @@
 package agh.po.lab3;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class CodingBat {
 
 
@@ -50,8 +53,34 @@ public class CodingBat {
         return false;
     }
 
+    public Map<String, String> mapAB2(Map<String, String> map) {
+        if (map.containsKey("a") && map.containsKey("b")) {
+            if (map.get("a").equals(map.get("b"))) {
+                map.remove("a");
+                map.remove("b");
 
-    public static void main(String[] args) {
+            }
+        }
+        return map;
+    }
+
+    public Map<String, Integer> wordCount(String[] strings) {
+        Map<String, Integer> map = new HashMap<String, Integer> ();
+        for (String s:strings) {
+
+            if (!map.containsKey(s)) {
+                map.put(s, 1);
+            }
+            else {
+                int count = map.get(s);
+                map.put(s, count + 1);
+            }
+        }
+        return map;
+    }
+
+
+        public static void main(String[] args) {
 
         CodingBat newobj1 = new CodingBat();
         System.out.println(newobj1);
@@ -67,6 +96,18 @@ public class CodingBat {
         System.out.println(newobj1.array123(new int[]{1, 2, 1, 2, 3}));
         System.out.println(newobj1.array123(new int[]{1, 2, 1, 4, 3}));
         System.out.println(newobj1.array123(new int[]{1, 2, 3}));
+
+
+        Map<String, String> testmap2 = new HashMap<>();
+        testmap2.put("a", "aaa");
+        testmap2.put("b", "aaa");
+        testmap2.put("c", "cake");
+
+        System.out.println(newobj1.mapAB2(testmap2));
+
+        System.out.println(newobj1.wordCount(new String[]{"a", "b", "a", "c", "b"}));
+
+
 
 
     }
