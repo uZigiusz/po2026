@@ -84,17 +84,18 @@ public class CodingBatTest {
         expected1.put("c", 1);
         assertEquals(expected1, cb.wordCount(test));
 
-        String[] test2 = new String[]{"c", "b", "a"};
+        String[] test2 = new String[]{"a", "a", "c", "c", "b"};
         Map<String, Integer> expected2 = new HashMap<>();
-        expected2.put("a", 1);
+        expected2.put("a", 2);
+        expected2.put("c", 2);
         expected2.put("b", 1);
-        expected2.put("c", 1);
         assertEquals(expected2, cb.wordCount(test2));
 
-        String[] test3 = new String[]{"c", "c", "c", "c"};
+        String[] test3 = new String[]{"a", "a", "a", "b", "b"};
         Map<String, Integer> expected3 = new HashMap<>();
-        expected3.put("c", 4);
-        assertEquals(expected3, cb.wordCount(test3));
+        expected3.put("a", 3);
+        expected3.put("b", 2);
+        assertEquals(expected3, cb.wordCount(test3));;
 
 
 
