@@ -53,6 +53,24 @@ public class CodingBatTest {
         expected.put("c", "cake");
         assertEquals(expected, cb.mapAB2(test));
 
+        Map<String, String> test2 = new HashMap<>();
+        test.put("a", "aaa");
+        test.put("b", "bbb");
+
+        Map<String, String> expected2 = new HashMap<>();
+        expected.put("a", "aaa");
+        expected.put("b", "bbb");
+        assertEquals(expected, cb.mapAB2(test));
+
+        Map<String, String> test3 = new HashMap<>();
+        test.put("a", "aaa");
+        test.put("c", "cake");
+
+        Map<String, String> expected3 = new HashMap<>();
+        expected.put("a", "aaa");
+        expected.put("c", "cake");
+        assertEquals(expected, cb.mapAB2(test));
+
     }
 
     @Test
@@ -65,6 +83,20 @@ public class CodingBatTest {
         expected1.put("b", 2);
         expected1.put("c", 1);
         assertEquals(expected1, cb.wordCount(test));
+
+        String[] test2 = new String[]{"c", "b", "a"};
+        Map<String, Integer> expected2 = new HashMap<>();
+        expected2.put("a", 1);
+        expected2.put("b", 1);
+        expected2.put("c", 1);
+        assertEquals(expected2, cb.wordCount(test2));
+
+        String[] test3 = new String[]{"c", "c", "c", "c"};
+        Map<String, Integer> expected3 = new HashMap<>();
+        expected3.put("c", 4);
+        assertEquals(expected3, cb.wordCount(test3));
+
+
 
     }
 

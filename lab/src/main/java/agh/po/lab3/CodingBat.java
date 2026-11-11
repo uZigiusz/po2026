@@ -98,19 +98,31 @@ public class CodingBat {
         System.out.println(newobj1.array123(new int[]{1, 2, 3}));
 
 
+        Map<String, String> testmap1 = new HashMap<>();
+        testmap1.put("a", "aaa");
+        testmap1.put("b", "aaa");
+        testmap1.put("c", "cake");
+        System.out.println(newobj1.mapAB2(testmap1));
+
         Map<String, String> testmap2 = new HashMap<>();
         testmap2.put("a", "aaa");
-        testmap2.put("b", "aaa");
-        testmap2.put("c", "cake");
+        testmap2.put("b", "bbb");
+        System.out.println("mapAB2 - test 2: " + newobj1.mapAB2(testmap2));
 
-        System.out.println(newobj1.mapAB2(testmap2));
+        Map<String, String> testmap3 = new HashMap<>();
+        testmap3.put("a", "aaa");
+        testmap3.put("c", "cake");
+        System.out.println("mapAB2 - test 3: " + newobj1.mapAB2(testmap3));
 
         System.out.println(newobj1.wordCount(new String[]{"a", "b", "a", "c", "b"}));
+        System.out.println(newobj1.wordCount(new String[]{"a", "a", "c", "c", "b"}));
+        System.out.println(newobj1.wordCount(new String[]{"a", "a", "a", "b", "b"}));
 
 
 
 
-    }
+
+        }
 }
 
 
