@@ -1,10 +1,19 @@
 package agh.po.animals;
 
 public abstract class Animal {
+
+    String name;
+    int legs;
+
+    public Animal(String name, int legs){
+        this.name = name;
+        this.legs = legs;
+    }
+
     abstract String getDescription();
 
-    public static void main(String[] args) {
-
+    public int getLegs() {
+        return legs;
     }
 
 }
