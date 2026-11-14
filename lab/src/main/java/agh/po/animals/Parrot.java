@@ -11,4 +11,9 @@ public class Parrot extends Animal{
         return "Parrot: " + name;
     }
 
+    @Override
+    public void makeSound() {
+        System.out.println("lala");
+    }
+
 }

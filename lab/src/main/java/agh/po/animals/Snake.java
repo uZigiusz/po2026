@@ -10,5 +10,10 @@ public class Snake extends Animal {
         return "Snake: " + name;
     }
 
+    @Override
+    public void makeSound() {
+        System.out.println("sss");
+    }
+
 
 }

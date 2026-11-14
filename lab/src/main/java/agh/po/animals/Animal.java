@@ -16,4 +16,6 @@ public abstract class Animal {
         return legs;
     }
 
+    public abstract void makeSound();
+
 }

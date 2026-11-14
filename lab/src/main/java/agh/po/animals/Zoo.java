@@ -24,6 +24,15 @@ public class Zoo {
             }
         }
 
+        for (Animal animal : animals) {
+            int legs = animal.getLegs();
+            String description = animal.getDescription();
+            System.out.println(description);
+            animal.makeSound();
+        }
+
+
+
         int totalLegs = countTotalLegs(animals);
         System.out.println("suma nog wszystkich zwierzat: " + totalLegs);
 
