@@ -7,6 +7,7 @@ public class SkrzyniaBiegow extends Komponent{
 
     void zwiekszBieg(){
 
+
     }
 
     void zmniejszBieg(){
