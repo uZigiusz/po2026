@@ -13,10 +13,12 @@ public class Silnik extends Komponent{
 
 
     public void uruchom(){
+
         this.obroty = 800;
     }
 
     public void zatrzymaj(){
+
         this.obroty = 0;
     }
 

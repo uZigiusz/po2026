@@ -10,11 +10,24 @@ public class Pozycja {
         this.y = y;
     }
 
-    public void aktualizujPozycje(double deltaX, double deltaY){
+    public void przemiesc(double dt, double V, Pozycja cel) {
+        double dx = cel.getX() - this.x;
+        double dy = cel.getY() - this.y;
+        double odleglosc = Math.sqrt(dx * dx + dy * dy);
 
-        this.x += deltaX;
-        this.y += deltaY;
+        if (odleglosc == 0) {
+            return;
+        }
 
+        double droga = V * dt;
+
+        if (droga >= odleglosc) {
+            this.x = cel.getX();
+            this.y = cel.getY();
+        } else {
+            this.x += (dx / odleglosc) * droga;
+            this.y += (dy / odleglosc) * droga;
+        }
     }
 
     public String getPozycja(){
